@@ -9,8 +9,9 @@ jobs:
   autoupdate:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: update all prs
-      uses: maxkomarychev/pr-updater-action@v1.0.0
-      with:
-          token: ${{ secrets.USER_TOKEN }}
+      - name: Update All Pull Requests
+        uses: juliangruber/update-pull-request-branch-action@v1
+        with:
+          waitForPullRequestUpdated: false
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
